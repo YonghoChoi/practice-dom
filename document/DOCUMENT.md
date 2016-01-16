@@ -73,10 +73,12 @@ window.onload = function() {
 
 ## documnet 메소드
 
+### get
+
 * 특정 엘리먼트가 아닌 Document 전체가 대상
 * 파라미터에 지정한 조건과 같은 엘리먼트 반환
 
-### getElementById()
+#### getElementById()
 
   * id 속성 값이 같은 엘리먼트 반환
     * document에 존재하지 않으면 null 반환
@@ -84,7 +86,7 @@ window.onload = function() {
       * javascript는 에러를 최대한 내지 않으려고 하는 특성이 있다.
     * 엘리먼트를 생성만 하고 document에 첨부하지 않으면 검색하지 못함
       * 즉 DOM Tree에 존재해야 함
-### getElementsByTagName()
+#### getElementsByTagName()
 
 * tag 이름이 같은 모든 엘리먼트 반환
   * 태그 이름이 같은 엘리먼트가 없더라도 빈 HTMLCollection 반환
@@ -94,15 +96,53 @@ window.onload = function() {
   * 엘리먼트가 배열로 반환되는 형태
   * Collection은 일반적으로 배열, 오브젝트 형태에서 사용
 
-### getElementsByTagNameNS()
+#### getElementsByTagNameNS()
 
 * Namespace에 속한 엘리먼트 반환
   * XML 형태를 처리할 때 사용
     * 현재는 필요없는 개념이 되었음.
 
-### getElementsByClassName()
+#### getElementsByClassName()
 
 * 클래스 이름이 같은 모든 엘리먼트 반환
+
+### Create
+
+* 엘리먼트 생성, 복사, 이동 메소드
+
+#### createElelment()
+
+* 엘리먼트 생성
+
+#### createTextNode()
+
+* 텍스트 노드 생성
+
+#### createAttribute()
+
+* 속성 노드 생성
+  * DOM에서 지원하는 엘리먼트 속성은 속성 노드를 생성하지 않아도 값을 설정할 수 있으나 개발자가 속성 이름을 만들어 속성값을 설정하려면 속성 노드를 생성한 후에 값을 설정한다.
+  * 웹페이지 렌더링 후 출력에는 노출되지 않고, 소스를 통해서 확인 할 수 있다. (user define attribute)
+
+#### importNode()
+
+* 다른 document의 node를 복제
+  * 다른 Document의 노드를 복제하여 현재의 Document에 삽입
+  * 두 번째 파라미터에 true를 지정하면 차일드 노드도 복제 (연결된 차일드들은 모두 복제됨)
+  * 복제한 다른 Document의 노드는 삭제되지 않음
+
+#### adoptNode()
+
+* 다른 document의 node를 이동
+
+#### createDocumentFragment()
+
+* DocumentFagment 오브젝트 생성
+
+#### createRange()
+
+* Range 오브젝트 생성
+
 
 [document]: https://html.spec.whatwg.org/multipage/dom.html#document
 [Interface Document]: https://www.w3.org/TR/domcore/#interface-document

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src='common/log.js'></script>
-    <script src='common/myNote.js'></script>
-    <script src='common/jsexec.js'></script>
+    <script src='../common/log.js'></script>
+    <script src='../common/myNote.js'></script>
+    <script src='../common/jsexec.js'></script>
     <style>
       .namedNodeMapClass {background-color: yellow}
       #middle{position:absolute; left: 100px; top: 80px;
@@ -15,28 +15,12 @@
     </style>
   </head>
   <body>
-    <select id='selectDirectory'>
-      <option value="document">document</option>
-      <option value="element">element</option>
-    </select>
     <input type="textbox" name="filePath" id='filePath' value="" onkeydown="if (event.keyCode == 13)
                         document.getElementById('btnExecute').click()">
     <button id='btnExecute' onclick="jsExec();">실행</button>
     <br><br>
 
     <p>>> 예제 샘플</p>
-    <!-- id 값은 테스트를 위해 의도적으로 같은 값을 넣었음 -->
-    <label><input type="radio" class="sports ground" name="sports" id="sports" checked>축구</label>
-    <label><input type="radio" class="swim sports" name="sports" id="swim">수영</label>
-    <label><input type="radio" name="sports" id="sports">스키</label>
-    <p id=checkNode>
-      <label><input type="checkbox">배드민턴</label>
-      <label><input type="checkbox">야구</label>
-    </p>
-    <div id=middle>
-      <div id=board class="sports winter">보드</div>
-      <div id=basketball class="sports basketball">농구</div>
-    </div>
     <div id='named_node_map'></div>
     <div id='get_attribute' data-attr='html5-data attribute'></div>
     <div id='remove_attribute' class='greenClass' userDefine='test'></div>
@@ -45,8 +29,19 @@
     <div id='wrap'>
       <div id='replace_child'>클릭하면 replaceChild() 실행</div>
     </div>
+    <ul id='sports'>
+      <li id=soccer>축구</li>
+      <li>농구</li>
+      <li id=baseball> </li>
+    </ul>
 
+    <ul id='items'>
+      <li id=computer>컴퓨터</li>
+      <li id=book>책</li>
+    </ul>
 
+    <div id='clone'></div>
+    <div id='textClick'>textClick</div>
     <br><br>
 
     <p>>> 결과</p>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='../common/log.js'></script>
+    <script src='../common/myNote.js'></script>
+    <script src='../common/jsexec.js'></script>
+  </head>
+  <body>
+    <input type="textbox" name="filePath" id='filePath' value="" onkeydown="if (event.keyCode == 13)
+                        document.getElementById('btnExecute').click()">
+    <button id='btnExecute' onclick="jsExec();">실행</button>
+    <br><br>
+
+    <p>>> 예제 샘플</p>
+    <div id='parent'>
+      <p id='child'>차일드 노드</p>
+    </div>
+
+    <ul id='sports'>
+      <li id='baseball'>야구</li>
+      <li id='swim'>수영</li>
+    </ul>
+    <br><br>
+
+    <p>>> 결과</p>
+  </body>
+</html>

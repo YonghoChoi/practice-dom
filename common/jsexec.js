@@ -1,9 +1,8 @@
 function jsExec(){
   var filePath = document.getElementById("filePath").value;
   var selectDirectory = document.getElementById("selectDirectory");
-  var dir = selectDirectory.options[selectDirectory.selectedIndex].value;
 
-  var src = './'+ dir + '/' + filePath + '.js';
+  var src = './' + filePath + '.js';
   var divId = 'jsView';
 
   js.log('=== ' + filePath + '.js ===');
