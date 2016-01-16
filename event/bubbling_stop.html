@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #group {position:absolute; top: 80px; left: 80px}
+      #sports, #swim{
+        border: solid blue 1px; margin: 10px;
+        width: 120px; height: 100px;
+        background-color: lime;
+      }
+      #swim{
+        width: 70px;
+        height: 50px;
+        background-color: yellow;
+      }
+    </style>
+    <script src='../common/log.js'></script>
+  </head>
+  <body>
+    <div id="group">
+      <div>스포츠, 수영을 클릭하세요</div>
+      <div id="sports">스포츠
+        <div id="swim">수영</div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var sportsClick = document.getElementById('sports');
+      var swimClick = document.getElementById('swim');
+      if(sportsClick.addEventListener) {
+        sportsClick.addEventListener('click', function(){js.log('스포츠')});
+        swimClick.addEventListener('click', function(){
+          js.log('수영');
+          if(event.stopPropagation) {
+            event.stopPropagation();
+          } else {
+            event.cancelBubble = true;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

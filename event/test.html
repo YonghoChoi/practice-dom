@@ -6,6 +6,13 @@
     <script src='../common/log.js'></script>
     <script src='../common/myNote.js'></script>
     <script src='../common/jsexec.js'></script>
+    <style media="screen">
+      .eventClass {
+      }
+      .clickClass, .handleClass {
+        width: 200px; height: 30px;
+      }
+    </style>
   </head>
   <body>
     <input type="textbox" name="filePath" id='filePath' value="" onkeydown="if (event.keyCode == 13)
@@ -14,6 +21,16 @@
     <br><br>
 
     <p>>> 예제 샘플</p>
+    <div>
+      <div id="clickID" class="clickClass">클릭하세요</div>
+      <div id="handle" class="handleClass"></div>
+    </div>
+
+    <div class="eventClass">
+      <div id="add" class="addClass">이벤트 설정</div>
+      <div id="remove" class="removeClass">이벤트 해제</div>
+      <div id="show" class="showClass"></div>
+    </div>
     <br><br>
 
     <p>>> 결과</p>
