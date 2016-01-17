@@ -3,52 +3,73 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src='common/log.js'></script>
-    <script src='common/myNote.js'></script>
     <script src='common/jsexec.js'></script>
-    <style>
-      .namedNodeMapClass {background-color: yellow}
-      #middle{position:absolute; left: 100px; top: 80px;
-              width: 200px; font-size: 16px}
-      .greenClass{background-color: yellow}
-      #wrap{background-color: lime}
-    </style>
+    <script src='common/jumpMenu.js'></script>
   </head>
   <body>
-    <select id='selectDirectory'>
-      <option value="document">document</option>
-      <option value="element">element</option>
-    </select>
-    <input type="textbox" name="filePath" id='filePath' value="" onkeydown="if (event.keyCode == 13)
-                        document.getElementById('btnExecute').click()">
-    <button id='btnExecute' onclick="jsExec();">실행</button>
-    <br><br>
+    <div id="layer_fixed">
+      <!-- 테이블을 생성한 이유는 가운데 정렬을 위해서 이다.-->
+      <table cellspacing="0" cellpadding="0" style="width: 100%; height: 100%;">
+        <tr>
+          <td style="vertical-align: middle; padding-left: 20px; padding-right: 20px;">
+            <!-- document -->
+            <select id="document" onChange="jumpMenu('document')">
+              <option value="document">document</option>
+              <option value="createAttribute">createAttribute</option>
+              <option value="createElement">createElement</option>
+              <option value="createTextNode">createTextNode</option>
+              <option value="document_property">document_property</option>
+              <option value="adoptNode">adoptNode</option>
+              <option value="getElementById">getElementById</option>
+              <option value="getElementsByTagName">getElementsByTagName</option>
+              <option value="getElementsByClassName">getElementsByClassName</option>
+              <option value="implementation">implementation</option>
+              <option value="importNode">importNode</option>
+            </select>
 
-    <p>>> 예제 샘플</p>
-    <!-- id 값은 테스트를 위해 의도적으로 같은 값을 넣었음 -->
-    <label><input type="radio" class="sports ground" name="sports" id="sports" checked>축구</label>
-    <label><input type="radio" class="swim sports" name="sports" id="swim">수영</label>
-    <label><input type="radio" name="sports" id="sports">스키</label>
-    <p id=checkNode>
-      <label><input type="checkbox">배드민턴</label>
-      <label><input type="checkbox">야구</label>
-    </p>
-    <div id=middle>
-      <div id=board class="sports winter">보드</div>
-      <div id=basketball class="sports basketball">농구</div>
+            <!-- element -->
+            <select id="element" onChange="jumpMenu('element')">
+              <option value="element">element</option>
+              <option value="appendChild">appendChild</option>
+              <option value="child">child</option>
+              <option value="cloneNode">cloneNode</option>
+              <option value="element_attribute">element_attribute</option>
+              <option value="getAttribute">getAttribute</option>
+              <option value="hasAttribute">hasAttribute</option>
+              <option value="hasChildNodes">hasChildNodes</option>
+              <option value="HTMLCollection">HTMLCollection</option>
+              <option value="isEqualNode">isEqualNode</option>
+              <option value="named_node_map">named_node_map</option>
+              <option value="normalize">normalize</option>
+              <option value="remove">remove</option>
+              <option value="removeAttribute">removeAttribute</option>
+              <option value="removeChild">removeChild</option>
+              <option value="replaceChild">replaceChild</option>
+              <option value="setAttribute">setAttribute</option>
+            </select>
+
+            <!-- event -->
+            <select id="event" onChange="jumpMenu('event')">
+              <option value="event">event</option>
+              <option value="bubbling_stop">bubbling_stop</option>
+              <option value="bubbling">bubbling</option>
+              <option value="event_attribute">event_attribute</option>
+              <option value="event_set">event_set</option>
+              <option value="event_unset">event_unset</option>
+              <option value="listener_write">listener_write</option>
+              <option value="preventDefault">preventDefault</option>
+              <option value="mouseEventType">mouseEventType</option>
+              <option value="mouseEventProperty">mouseEventProperty</option>
+              <option value="keyboardEventType">keyboardEventType</option>
+              <option value="keyboardEventProperty">keyboardEventProperty</option>
+              <option value="HTMLEvent">HTMLEvent</option>
+              <option value="HTMLEvent_selectChange">HTMLEvent_selectChange</option>
+            </select>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div id='named_node_map'></div>
-    <div id='get_attribute' data-attr='html5-data attribute'></div>
-    <div id='remove_attribute' class='greenClass' userDefine='test'></div>
-    <div id='append_child' class='greenClass'>클릭하면 appendChild()</div>
-    <div id='after'>기준 페어런트 엘리먼트</div>
-    <div id='wrap'>
-      <div id='replace_child'>클릭하면 replaceChild() 실행</div>
-    </div>
-
-
-    <br><br>
-
-    <p>>> 결과</p>
   </body>
 </html>

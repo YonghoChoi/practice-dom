@@ -84,4 +84,76 @@
   * DOM : preventDefault()
   * IE : returnValue = true
 
+## Event  속성
+
+* type
+* target
+* currentTarget
+*  eventPhase
+* bubbles
+* cancelable
+* defaultPrevented
+* timeStamp
+
+## 마우스 이벤트 타입
+
+* click
+* dbclick
+* mousedown
+* mouseup
+* mouseover
+* mousemove
+* mouseout
+
+## 마우스 이벤트 프로퍼티
+
+* altKey
+* ctrlKey
+* shiftKey
+* metaKey
+* screenX
+* screenY
+* clientX
+* clientY
+* x
+* y
+* pageX
+* pageY
+* offsetX : target의 padding-left에서 떨어진 X축 값
+* offsetY : target의 padding-top에서 떨어진 Y축 값
+* button : 클릭한 마우스의 버튼 값 반환
+* relatedTarget : 마우스 이벤트가 발생한 엘리먼트와 관계된 엘리먼트
+
+## 키보드 이벤트 타입
+
+* keydown : 키를 눌렀을 때
+* keyup : 눌렀던 키를 놓았을 때
+* keypress : 자판의 키가 눌려진 상태일 때 (키와 브라우저에 따라 차이가 있으며 문제가 있으므로 사용 주의)
+
+
+## 키보드 이벤트 프로퍼티
+
+* altKey
+* ctrlKey
+* shiftKey
+* metaKey
+* keyIdentifier
+* location
+
+## HTML 이벤트
+
+* abort
+* focus
+* blur
+* error
+* select
+* change
+* load
+* unload
+* resize
+* scroll
+* reset
+* submit
+
+* window > document > HTML element > tag element
 [DOM Spec]: https://dom.spec.whatwg.org/#event

@@ -1,0 +1,13 @@
+#layer_fixed {
+  height: 35px;
+  width: 100%;
+  color: #555;
+  font-size: 12px;
+  position: fixed;     /* fixed로 설정되어 있을 때 해당 객체가 웹 브라우저 창에 고정된다. */
+  z-index: 999;        /* 레이어가 다른 레이어에 대해서 어느정도의 위치에 있는지를 나타냄 (다른 레이어와 겹치는 위치를 나타낸다. - 숫자가 높을 수록 윗쪽에 위치) */
+  top: 0px;            /* top, left 값을 통해 해당 id를 가진 엘리먼트의 위치를 지정 */
+  left: 0px;
+  -webkit-box-shadow: 0 1px 2px 0 #777;
+  box-shadow: 0 1px 2px 0 #777;    /* 객체에 그림자를 만들어주는 속성 */
+  background-color: #ccc;
+}

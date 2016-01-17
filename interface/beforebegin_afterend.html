@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" onclick="exec()" value="클릭하면 innerHTML 실행">
+    <div>-- 직전 엘리먼트 --</div>
+    <div id="baseNode" style="background: yellow">-- 기준 엘리먼트 --</div>
+    <div>-- 직후 엘리먼트 --</div>
+
+    <script type="text/javascript">
+      function exec() {
+        var content = "<li id='swim'>수영</li>" +
+                        "<li id='baseball'>야구</li>" +
+                        "<li id='soccer'>축구</li>";
+
+        var baseNode = document.getElementById('baseNode');
+        // 직전 엘리먼트와 baseNode 사이에 삽입
+        baseNode.insertAdjacentHTML('beforebegin', content);
+
+        // baseNode와 직후 엘리먼트 사이에 삽입
+        baseNode.insertAdjacentHTML('afterend', content);
+      }
+    </script>
+  </body>
+</html>

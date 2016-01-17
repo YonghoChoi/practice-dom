@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" onclick="exec()" value="클릭하면 innerHTML 실행">
+    <div id="outerNode" style="background: yellow">
+      <ul id=outer>
+        <li id=outerChild>outer-child</li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+      function exec() {
+        var node = document.getElementById('outerNode');
+        node.outerHTML = "<li id='swim'>수영</li>" +
+                        "<li id='baseball'>야구</li>" +
+                        "<li id='soccer'>축구</li>";
+        // background: yellow가 지워지는 것은 outerNode도 대체하기 때문
+      }
+    </script>
+  </body>
+</html>

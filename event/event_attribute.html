@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #eventID {
+        width: 160px;
+        height: 60px;
+        border: 1px blue solid
+      }
+      #clickID {
+        margin: 20px; background-color: lime; border: 1px blue solid
+      }
+    </style>
+    <script src="../common/log.js"></script>
+  </head>
+  <body>
+    <div id="eventID">
+      <div id="clickID">클릭하세요</div>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById('eventID').addEventListener('click', show);
+      function show(event) {
+        js.log('type : ' + event.type);
+        js.log('target : ' + event.target.id);
+        js.log('currentTarget : ' + event.currentTarget.id);
+        js.log('eventPhase : ' + event.eventPhase);
+        js.log('bubbles : ' + event.bubbles);
+        js.log('cancelable : ' + event.cancelable);
+        js.log('defaultPrevented : ' + event.defaultPrevented);
+        js.log('timeStamp : ' + event.timeStamp);
+      }
+    </script>
+  </body>
+</html>

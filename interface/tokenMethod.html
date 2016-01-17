@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" id="add" value="토큰 추가">
+    <input type="button" id="remove" value="토큰 삭제">
+    <input type="button" id="toggle" value="토큰 토글">
+
+    <div id="items" class="sports music">sports music</div>
+
+    <script type="text/javascript">
+      var element = document.getElementById("items");
+      var tokens = element.classList;
+      js.log("classList : ", tokens);
+      js.log("length : ", tokens.length);
+
+      // add()
+      document.getElementById("add").addEventListener('click', function(){
+        tokens.add('책', '영화');
+        showResult();
+      }, false);
+
+      // remove()
+      document.getElementById("remove").addEventListener('click', function(){
+        tokens.remove('music', '영화');
+        showResult();
+      }, false);
+
+      // toggle()
+      document.getElementById("toggle").addEventListener('click', function(){
+        tokens.toggle('노트북');
+        showResult();
+      }, false);
+
+      function showResult() {
+        js.log("classList : ", tokens);
+        js.log("length : ", tokens.length);
+        element.textContent = tokens;
+      }
+
+    </script>
+  </body>
+</html>

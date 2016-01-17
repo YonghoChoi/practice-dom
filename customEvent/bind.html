@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" id=clickID value="클릭하세요.">
+
+    <script type="text/javascript">
+      window.onload = function(){
+        debugger;
+        var el = document.getElementById('clickID');
+        el.onclick = show.bind(sports, el);
+      }
+
+      var sports = {
+        value: 123
+      };
+
+      function show(element, event) {
+        debugger;
+        js.log(element.textContent);
+        js.log(event.target.id);
+        js.log(this.value);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <style media="screen">
+    p {color: blue}
+  </style>
+  </head>
+  <body>
+    <div class=wrapper>
+      <p id='idOne'>좋아하는 스포츠</p>
+      <div id='sportsDiv' class='sportsClass sportsTwo'>스포츠
+        <p id="soccerDiv" class="soccerClass">축구,
+          <span id="memberSpan" class="soccerClass">11명</span>
+          <span id="timeSpan" class="soccerClass">90분</span>>
+        </p>
+        <p id="idTwo" class="sportsClass">농구</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var nodes = document.querySelectorAll('p');
+      js.log(nodes);
+    </script>
+  </body>
+</html>

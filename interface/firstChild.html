@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id="sports">리스트
+      <li id="id11">ID-11</li>
+      <li id="id12">ID-12
+        <ul id="ul2">
+          <li id="id121">ID-121</li>
+          <li id="id122">ID-122</li>
+        </ul>
+      </li>
+      <li id="id13">ID-13</li>
+    </ul>
+
+    <script type="text/javascript">
+      debugger;
+      var walkerObj = document.createTreeWalker(
+        document.getElementById('sports'),
+        NodeFilter.SHOW_ELEMENT,  // ELEMENT만 필터
+        {acceptNode: function(node) {    // nextNode시 function 수행
+          if(node.nodeName === 'LI') {
+            return NodeFilter.FILTER_ACCEPT;    // 필터링 통과
+          }
+        }}, false  // IE 때문에 필요한 파라미터
+      );
+      var node = walkerObj.firstChild();
+      js.log('firstChild().id : ', node.id);
+
+      walkerObj.parentNode();
+      node = walkerObj.lastChild();
+      js.log('lastChild().id : ', node.id);
+    </script>
+  </body>
+</html>

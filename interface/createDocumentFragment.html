@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id="topNode"></ul>
+
+    <script type="text/javascript">
+      var ulNode = document.getElementById("topNode");
+      var fragmentObj = document.createDocumentFragment();
+      js.log('nodeType : ', fragmentObj.nodeType);
+      js.log('nodeName : ', fragmentObj.nodeName);
+
+      for(var k = 0; k < 10; k++) {
+        var liNode = document.createElement("li");
+        liNode.textContent = 'text' + k;
+        fragmentObj.appendChild(liNode);
+      }
+
+      // DocumentFragment 오브젝트에 설정된 <li>를 <ul>에 첨부
+      js.log('before count : ', ulNode.childElementCount);
+      ulNode.appendChild(fragmentObj);
+      js.log('after count : ', ulNode.childElementCount);
+    </script>
+  </body>
+</html>
