@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" onclick="exec()" value="클릭하면 실행">
+    <div id="baseNode">
+      <div id="id1">id1
+        <div id="id11">id11</div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var baseNode = document.getElementById('baseNode');
+      var options = {childList: true, subtree: true, attributes: true, attributeOldValue: true, attributeFilter: ['id']};
+      var obj = new MutationObserver(callback);
+
+      function exec() {
+        document.getElementById('id1').id = "changeID";
+      }
+      obj.observe(baseNode, options);
+
+      function callback(records) {
+        records.forEach(function(record) {
+          js.log('type : ', record.type);
+          js.log('oldValue : ', record.oldValue);
+          js.log('attributeName : ', record.attributeName);
+        });
+      }
+    </script>
+  </body>
+</html>

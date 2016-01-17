@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" onclick="exec()" value="클릭하면 실행">
+    <div>-- 직전 엘리먼트 --</div>
+    <div id="baseNode" style="background: yellow">-- 기준 엘리먼트 --</div>
+    <div>-- 직후 엘리먼트 --</div>
+
+    <script type="text/javascript">
+      function exec() {
+        var content = "<li id='swim'>수영</li>" +
+                        "<li id='baseball'>야구</li>" +
+                        "<li id='soccer'>축구</li>";
+
+        var baseNode = document.getElementById('baseNode');
+
+        // baseNode의 첫번째 차일드 노드(text node) 앞에 삽입
+        var afterBeginNode = document.createElement('div');
+        afterBeginNode.textContent = "afterbegin";
+        baseNode.insertBefore(afterBeginNode, baseNode.firstChild);
+
+        // baseNode의 마지막 차일드로 첨부
+        var beforeEndNode = document.createElement('div');
+        beforeEndNode.textContent = "beforeend";
+        baseNode.appendChild(beforeEndNode);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" onclick="exec()" value="클릭하면 실행">
+    <div id="baseNode">
+      <div id="id1">id1
+        <div id="id11">id11</div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var baseNode = document.getElementById('baseNode');
+      var options = {childList: true, subtree: true, removedNodes: true};
+      var obj = new MutationObserver(callback);
+
+      function exec() {
+        var node = document.getElementById('id11');
+        if(node) {
+            node.parentNode.removeChild(node);
+        }
+        callback(obj.takeRecords());
+        obj.disconnect();
+      }
+      obj.observe(baseNode, options);
+
+      function callback(records) {
+        records.forEach(function(record) {
+          js.log('type : ', record.type);
+          js.log('target : ', record.target.id);
+          var nodes = record.removedNodes;
+          for(var k = 0; k < nodes.length; k++) {
+            js.log('id : ', nodes[k].id, ', ', nodes[k].textContent);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

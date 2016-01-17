@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" onclick="exec()" value="클릭하면 실행">
+    <div id="baseNode">-- 모니터링 기준 #baseNode --</div>
+
+    <script type="text/javascript">
+      var baseNode = document.getElementById('baseNode');
+
+      function exec() {
+        // baseNode에 child 추가
+        var content = '<div id=one>추가</div><div id=two>추가2</div>';
+        baseNode.insertAdjacentHTML('beforeend', content);
+      }
+
+      var obj = new MutationObserver(callback);
+      // child node의 추가, 삭제를 모니터링하도록 옵션 설정
+      var options = {childList: true};
+
+      // 관찰 시작
+      obj.observe(baseNode, options);
+      function callback(records) {
+        records.forEach(function(record){
+          var addedNodes = record.addedNodes;
+          for(var k = 0; k < addedNodes.length; k++){
+            js.log('id : ', addedNodes[k].id, ', ', addedNodes[k].textContent);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
