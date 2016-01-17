@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="eventClass">
+      <div id="add" class="addClass">이벤트 설정 클릭</div>
+      <div id="remove" class="removeClass">이벤트 해제 클릭</div>
+      <div id="show" class="showClass">결과</div>
+    </div>
+    <script type="text/javascript">
+      var addClick = document.getElementById('add');
+      var removeClick = document.getElementById('remove');
+      var showNode = document.getElementById('show');
+
+      if(addClick.addEventListener) {
+        addClick.addEventListener('click', showChoice, false);
+        removeClick.addEventListener('click', setRemove);
+      } else {
+        addClick.attachEvent('onclick', showChoice);
+        removeClick.attachEvent('onclick', setRemove);
+      }
+
+      function showChoice() {
+        showNode.style.backgroundColor = 'yellow';
+      }
+
+      function setRemove(e) {
+        showNode.style.backgroundColor = '';
+        if(addClick.removeEventListener) {
+          addClick.removeEventListener('click', showChoice, false);
+        }
+      }
+    </script>
+  </body>
+</html>

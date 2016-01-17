@@ -4,9 +4,32 @@
     <meta charset="utf-8">
     <title></title>
     <script src="../common/log.js"/>
-    <script src="js/HTMLEvent.js"/>
   </head>
   <body>
+    <script type="text/javascript">
+      // 이벤트가 발생한 순서를 체크하기 위한 것이므로 window.onload = function(){}안에 작성하지 않음
+      var contentLoaded = false;
+      document.addEventListener('DOMContentLoaded', function(event){
+        // 해당 이벤트가 발생하였다는 것은 DOM tree가 완성되었다는 것이다.
+        // 프레임워크 개발에서는 window.onload보다 DOMContentLoaded 이벤트를 더 많이 사용
+        // body가 로드 되었으므로 js.log 사용 가능
+        js.log('DOM 파싱 완료');
+        contentLoaded = true;
+      });
 
+      window.onload = function(event) {
+        js.log('event type : ', event.type);
+        js.log('DOMContentLoaded : ', contentLoaded);
+      }
+
+      /*
+        1. DOMContentLoaded 이벤트 : DOM이 로드 되고 파싱 되었을 때 발생
+        2. window.onload 이벤트 : <img>의 image를 가져온 후에 발생
+
+        페이지가 랜더링 될 떄 이미지가 다 로드 될때까지 기다리는 것이 아니고, 먼저 이미지 로딩 여부와 상관 없이
+        DOM tree를 생성한다. 그래서 이미지 로드가 되지 않아도 텍스트가 먼저 표시되고 이미지가 로드 되면 해당 이미지가 표시된다.
+        이 때 Dom tree 생성시에 사이즈까지 저장하는 것은 아니므로 로딩완료된 이미지 사이즈가 미리 잡아놓은 것과 달라질 수 있다.
+      */
+    </script>
   </body>
 </html>

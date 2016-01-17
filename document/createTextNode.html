@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p id="sports"></p>
+    <script type="text/javascript">
+      var el = document.getElementById('sports');
+      var node = document.createTextNode('생성한 텍스트 노드');
+
+      el.appendChild(node);   // dom tree에 추가
+      js.log(el.textContent);
+    </script>
+  </body>
+</html>

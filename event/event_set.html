@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <div id="clickID" class="clickClass">클릭하세요</div>
+      <div id="handle" class="handleClass"></div>
+    </div>
+
+    <div class="eventClass">
+      <div id="add" class="addClass">이벤트 설정</div>
+      <div id="remove" class="removeClass">이벤트 해제</div>
+      <div id="show" class="showClass"></div>
+    </div>
+    <script type="text/javascript">
+      var clickNode = document.getElementById('clickID');
+      if(clickNode.addEventListener) {
+        clickNode.addEventListener('click', handleClick, false);
+      } else {
+        clickNode.attachEvent('onclick', handleClick);
+      }
+
+      function handleClick() {
+        var node = document.getElementById('handle');
+        node.style.backgroundColor = 'yellow';
+        node.textContent = '이벤트 발생';
+      }
+    </script>
+  </body>
+</html>

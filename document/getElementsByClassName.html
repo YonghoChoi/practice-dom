@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="group">
+      <div id="id1" class="sports"></div>
+      <div id="id2" class="swim"></div>
+      <div id="id3" class="sports"></div>
+      <div id="id4" class="sports swim"></div>
+    </div>
+    <script type="text/javascript">
+      js.log('== document.getElementsByClassName("sports") ==');
+      var nodes = document.getElementsByClassName('sports');
+      show(nodes);
+
+      js.log('== document.getElementsByClassName("sports swim") ==');
+      nodes = document.getElementsByClassName('sports swim');
+      show(nodes);
+
+      js.log('== group내 sports 클래스를 가진 리스트 ==');
+      var el = document.getElementById('group');
+      nodes = el.getElementsByClassName('sports');
+      show(nodes);
+      function show(nodes) {
+        for(var k=0; k < nodes.length; k++) {
+          js.log(nodes[k].id);
+        }
+      }
+    </script>
+  </body>
+</html>

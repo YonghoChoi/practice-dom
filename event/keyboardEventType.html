@@ -5,9 +5,18 @@
     <title></title>
   </head>
   <script src="../common/log.js"/>
-  <script src="js/keyboardEventType.js"/>
   </script>
   <body>
     <input type="text" id="inputID">
+    <script type="text/javascript">
+      var node = document.getElementById('inputID');
+      node.addEventListener('keydown', keyDownUp);
+      node.addEventListener('keypress', keyDownUp);
+      node.addEventListener('keyup', keyDownUp);
+
+      function keyDownUp(event) {
+        js.log('type : ', event.type, 'code : ', event.keyCode);
+      }
+    </script>
   </body>
 </html>

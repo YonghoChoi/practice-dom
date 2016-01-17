@@ -12,5 +12,27 @@
       <input type="text" id=two/>
       <input type="submit" value="전송"/>
     </form>
+
+    <script type="text/javascript">
+      window.addEventListener('resize', resizePrint);
+
+      document.addEventListener('DOMContentLoaded', function(event){
+        var myForm = document.getElementById('myForm');
+        myForm.addEventListener('submit', onSubmit);
+      });
+
+      function resizePrint(event) {
+        js.log(event.target.innerWidth, ', ', event.target.innerWidth);
+      }
+
+      function onSubmit() {
+        debugger;
+        var one = document.getElementById('one');
+        var two = document.getElementById('one');
+        js.log('one : ', one.value);
+        js.log('two : ', two.value);
+        two.focus();
+      }
+    </script>
   </body>
 </html>

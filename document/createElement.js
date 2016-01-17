@@ -1,4 +1,0 @@
-// createElement만 수행하면 말그대로 엘리먼트만 생성되어 메모리에 올라간 것이다.
-// dom tree에는 추가되지 않은 상태 이므로 화면에는 영향이 없다.
-var el = document.createElement('div');
-js.log(el.nodeName);

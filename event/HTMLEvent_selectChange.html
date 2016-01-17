@@ -4,9 +4,21 @@
     <meta charset="utf-8">
     <title></title>
     <script src="../common/log.js"/>
-    <script src="js/HTMLEvent_selectChange.js"/>
   </head>
   <body>
     <input type="text" id="inputID" value="123456789">
+    <script type="text/javascript">
+      var node = document.getElementById('inputID');
+      document.addEventListener('select', selectEvent);
+      document.addEventListener('change', changeEvent);
+
+      function selectEvent(event) {
+        js.log('select : ', event.target.value);
+      }
+
+      function selectEvent(event) {
+        js.log('change : ', event.target.value);
+      }
+    </script>
   </body>
 </html>

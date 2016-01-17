@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id='checkNode'>
+      <input type="text" value="test용 텍스트박스">
+      <table>
+        <th>
+          <td>test용 테이블</td>
+        </th>
+      </table>
+    </div>
+    <script type="text/javascript">
+      var nodes = document.getElementsByTagName('input');
+      show(nodes);
+
+      nodes = document.getElementsByTagName('table');
+      js.log(nodes);
+      js.log(nodes.length);
+
+      var el = document.getElementById('checkNode');
+      nodes = el.getElementsByTagName('input');
+      show(nodes);
+      function show(nodes) {
+        for(var k=0; k < nodes.length; k++) {
+          js.log(nodes[k].nodeName);
+        }
+      }
+    </script>
+  </body>
+</html>

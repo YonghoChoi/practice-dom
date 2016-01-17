@@ -5,9 +5,21 @@
     <title></title>
   </head>
   <script src="../common/log.js"/>
-  <script src="js/keyboardEventProperty.js"/>
   </script>
   <body>
     <input type="text" id="inputID">
+    <script type="text/javascript">
+      var node = document.getElementById('inputID');
+      node.addEventListener('keydown', keyDown);
+
+      function keyDown(event) {
+        js.log('altKey : ' + event.altKey);
+        js.log('ctrlKey : ' + event.ctrlKey);
+        js.log('shiftKey : ' + event.shiftKey);
+        js.log('metaKey : ' + event.metaKey);
+        js.log('keyIdentifier : ' + event.keyIdentifier);
+        js.log('location : ' + event.location);
+      }
+    </script>
   </body>
 </html>
