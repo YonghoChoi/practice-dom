@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id='items'>
+      <li id=computer>컴퓨터</li>
+      <li id=book>책</li>
+    </ul>
+    <script type="text/javascript">
+      // parent element 기준으로 child element 추출
+      var middle = document.getElementById('items');
+
+      // IE8 이하는 지원하지 않음
+      js.log('childElementCount : ', middle.childElementCount);
+
+      // parent의 text node를 포함한 모든 child node
+      js.log('childNodes : ', middle.childNodes.length);
+
+      // child Node 중에서 Element Node를 Collection으로 반환
+      js.log('children : ', middle.children.length);
+    </script>
+  </body>
+</html>

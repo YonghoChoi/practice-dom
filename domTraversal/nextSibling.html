@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id='sports'>
+      <li id='baseball'>야구</li>
+      <li id='swim'>수영</li>
+    </ul>
+    <script type="text/javascript">
+      var el = document.getElementById('baseball');
+      var nextNode = el.nextSibling;
+      js.log(nextNode.nodeType);
+      js.log(nextNode.id);
+
+      js.log(nextNode.nextSibling.nodeType);
+      js.log(nextNode.nextSibling.id);
+    </script>
+  </body>
+</html>

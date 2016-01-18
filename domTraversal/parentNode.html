@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id='parent'>
+      <p id='child'>차일드 노드</p>
+    </div>
+    <script type="text/javascript">
+      var el = document.getElementById('parent');
+      js.log('nodeType : ', el.nodeType);
+
+      var parent = el.parentNode;
+      js.log('el.parentNode.id : ', parent.id);
+
+      var doc = document.documentElement;
+      js.log('doc.parentNode : ', doc.parentNode.nodeName);
+      js.log('doc.parentElement : ', doc.parentElement);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id='sports' class="test1 test2">스포츠
+      <li id=soccer>축구</li>
+      <li>농구</li>
+      <li id=baseball> </li>
+    </ul>
+    <script type="text/javascript">
+      // Element 속성
+      var el = document.getElementById('sports');
+      js.log('nodeName : ', el.nodeName);
+      js.log('tagName : ', el.tagName);
+
+      js.log('nodeType : ', el.nodeType);
+      js.log('nodeValue : ', el.nodeValue);
+      js.log('textContent : ', el.textContent);
+
+      // class 리스트
+      for(var k = 0; k < el.classList.length; k++) {
+        js.log('classList : ', el.classList[k]);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id='textClick'>textClick</div>
+    <div id='normalizeClick'>normalizeClick</div>
+    <ul id='items'>
+      <li id=computer>컴퓨터</li>
+      <li id=book>책</li>
+    </ul>
+    <script type="text/javascript">
+      var computerNode = document.getElementById('computer');
+      var textNode = document.getElementById('textClick');
+      textNode.addEventListener('click', clickText, false);
+      function clickText() {
+        var node = document.createTextNode('텍스트 노드 추가');
+        computerNode.appendChild(node);
+
+        js.log('textContent : ', computerNode.textContent);
+        js.log('length : ', computerNode.childNodes.length);
+      }
+
+      var normalizeNode = document.getElementById('normalizeClick');
+      normalizeNode.addEventListener('click', function() {
+        computerNode.normalize();
+
+        js.log('normalize() : ', computerNode.textContent);
+        js.log('length : ', computerNode.childNodes.length);
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <input type="button" id="clickNode" onclick="clickNode()" value="클릭">
+    <div id='wrap'>
+      <div id='replace_child'>클릭하면 replaceChild() 실행</div>
+    </div>
+    <script type="text/javascript">
+      var childNode = document.getElementById('replace_child');
+      function clickNode() {
+        var replace = document.createElement('div');
+        replace.textContent = '대체한 노드';
+        replace.setAttribute('class', 'greenClass');
+
+        var wrapNode = document.getElementById('wrap');
+        var el = document.getElementById('replace_child');
+        wrapNode.replaceChild(replace, el);
+
+        // 대체된 엘리먼트가 변수에 있으므로 사용할 수 있다.
+        js.log(el.id);
+      }
+    </script>
+  </body>
+</html>

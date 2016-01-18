@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id='sports'>
+      <li id=soccer>축구</li>
+      <li>농구</li>
+      <li id=baseball> </li>
+    </ul>
+    <div id='wrap'>
+      <div id='cloneNode'>클릭하면 cloneNode 실행</div>
+    </div>
+    <div id='clone'></div>
+    <script type="text/javascript">
+      var wrapNode = document.getElementById('wrap');
+      wrapNode.addEventListener('click', clickWrap, false);
+      function clickWrap() {
+        var el = document.getElementById('sports');
+
+        // true 차일드까지 복사
+        var cloneNodes = el.cloneNode(true);
+        var target = document.getElementById('clone');
+        target.appendChild(cloneNodes);
+
+        // id가 중복되므로 변경
+        target.firstChild.id = 'cloneID';
+        js.log('childElementCount : ', target.firstChild.childElementCount);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="set_attribute"></div>
+    <script type="text/javascript">
+      // setAttribute
+      var el = document.getElementById('set_attribute');
+      el.setAttribute('class', 'greenClass');
+
+      // 엘리먼트에 정의되지 않은 속성을 설정
+      el.setAttribute('sports-baseball', '야구');
+      js.log(el.getAttribute('sports-baseball'));
+    </script>
+  </body>
+</html>

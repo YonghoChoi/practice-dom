@@ -30,7 +30,6 @@
             </select>
 
             <!-- element -->
-            <!--
             <select id="element" onChange="jumpMenu('element')">
               <option value="element">element</option>
               <option value="appendChild">appendChild</option>
@@ -42,7 +41,7 @@
               <option value="hasChildNodes">hasChildNodes</option>
               <option value="HTMLCollection">HTMLCollection</option>
               <option value="isEqualNode">isEqualNode</option>
-              <option value="named_node_map">named_node_map</option>
+              <option value="namedNodeMap">namedNodeMap</option>
               <option value="normalize">normalize</option>
               <option value="remove">remove</option>
               <option value="removeAttribute">removeAttribute</option>
@@ -50,12 +49,15 @@
               <option value="replaceChild">replaceChild</option>
               <option value="setAttribute">setAttribute</option>
             </select>
--->
+
             <!-- event -->
             <select id="event" onChange="jumpMenu('event')">
               <option value="event">event</option>
+              <option value="bind">bind</option>
               <option value="bubbling_stop">bubbling_stop</option>
               <option value="bubbling">bubbling</option>
+              <option value="customEvent">customEvent</option>
+              <option value="dom4CustomEvent">dom4CustomEvent</option>
               <option value="event_attribute">event_attribute</option>
               <option value="event_set">event_set</option>
               <option value="event_unset">event_unset</option>
@@ -68,6 +70,48 @@
               <option value="mouseEventProperty">mouseEventProperty</option>
               <option value="preventDefault">preventDefault</option>
               <option value="relatedTarget">relatedTarget</option>
+            </select>
+
+            <!-- domTraversal -->
+            <select id="domTraversal" onChange="jumpMenu('domTraversal')">
+              <option value="domTraversal">domTraversal</option>
+              <option value="firstChild">firstChild</option>
+              <option value="firstElementChild">firstElementChild</option>
+              <option value="lastChild">lastChild</option>
+              <option value="lastElementChild">lastElementChild</option>
+              <option value="nextElementSibling">nextElementSibling</option>
+              <option value="nextSibling">nextSibling</option>
+              <option value="parentNode">parentNode</option>
+              <option value="previousElementSibling">previousElementSibling</option>
+              <option value="previousSibling">previousSibling</option>
+            </select>
+
+            <!-- interface -->
+            <select id="interface" onChange="jumpMenu('interface')">
+              <option value="interface">interface</option>
+              <option value="acceptNode">acceptNode</option>
+              <option value="afterbegin_beforeend">afterbegin_beforeend</option>
+              <option value="beforebegin_afterend">beforebegin_afterend</option>
+              <option value="compositionEvent">compositionEvent</option>
+              <option value="createDocumentFragment">createDocumentFragment</option>
+              <option value="createNodeIterator">createNodeIterator</option>
+              <option value="createTreeWalker">createTreeWalker</option>
+              <option value="firstChild">firstChild</option>
+              <option value="innerHTML">innerHTML</option>
+              <option value="insertBefore">insertBefore</option>
+              <option value="insertBefore2">insertBefore2</option>
+              <option value="mutationObserver">mutationObserver</option>
+              <option value="mutationRecord_modifyAttribute">mutationRecord_modifyAttribute</option>
+              <option value="mutationRecord_modifyText">mutationRecord_modifyText</option>
+              <option value="mutationRecord_take_disconnect">mutationRecord_take_disconnect</option>
+              <option value="mutationRecord">mutationRecord</option>
+              <option value="nextNode">nextNode</option>
+              <option value="nextSibling">nextSibling</option>
+              <option value="outerHTML">outerHTML</option>
+              <option value="parentNode">parentNode</option>
+              <option value="previousNode">previousNode</option>
+              <option value="tokenList">tokenList</option>
+              <option value="tokenMethod">tokenMethod</option>
             </select>
           </td>
         </tr>

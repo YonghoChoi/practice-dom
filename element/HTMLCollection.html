@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id='items'>
+      <li id=computer>컴퓨터</li>
+      <li id=book>책</li>
+    </ul>
+    <script type="text/javascript">
+      var nodes = document.getElementById('items').children;
+      js.log('length : ', nodes.length);
+
+      js.log('nodes.item(1).id : ', nodes.item(1).id);
+      js.log('nodes[0].id : ', nodes[0].id);
+
+      js.log('computer의 id : ', nodes.namedItem('computer').id);
+      js.log('book의 textContent : ', nodes.namedItem('book').textContent);
+
+      js.log('nodes["computer"].id : ', nodes['computer'].id);
+      js.log('nodes["book"].name', nodes['book'].textContent)
+    </script>
+  </body>
+</html>
