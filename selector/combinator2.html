@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
-      div p {color: blue}
+      div > p {color: blue}
     </style>
     <script src="../common/log.js" charset="utf-8"></script>
   </head>
@@ -19,12 +19,13 @@
     <p id='id6'>body의 차일드<p></p>
 
     <!--
-      1. <div>의 차일드 자손 중에서 모든 <p>에 color:blue 적용.
-      2. #id6은 <body>의 차일드 이므로 적용되지 않음
+      1. <div>의 차일드 중에서 모든 <p>에 color: blue 적용
+      2. ##id id5는 자손이므로 제외
+      3. #id6은 body의 차일드이므로 제외
     -->
 
     <script type="text/javascript">
-      var nodes = document.querySelectorAll("div p");
+      var nodes = document.querySelectorAll("div > p");
       for(k = 0; k < nodes.length; k++) {
           js.log(nodes[k].textContent);
       }

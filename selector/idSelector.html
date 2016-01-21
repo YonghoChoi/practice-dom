@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <style media="screen">
-      div p {color: blue}
-    </style>
-    <script src="../common/log.js" charset="utf-8"></script>
+  <style media="screen">
+    #id3, #id4 {color: blue}
+  </style>
+  <script src="../common/log.js"></script>
   </head>
   <body>
     <div id=id1>
@@ -17,14 +17,9 @@
         </span>
     </div>
     <p id='id6'>body의 차일드<p></p>
-
-    <!--
-      1. <div>의 차일드 자손 중에서 모든 <p>에 color:blue 적용.
-      2. #id6은 <body>의 차일드 이므로 적용되지 않음
-    -->
-
+    
     <script type="text/javascript">
-      var nodes = document.querySelectorAll("div p");
+      var nodes = document.querySelectorAll('#id3, #id4');
       for(k = 0; k < nodes.length; k++) {
           js.log(nodes[k].textContent);
       }

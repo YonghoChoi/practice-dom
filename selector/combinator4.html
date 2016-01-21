@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      p - div {color: blue}
+    </style>
+    <script src="../common/log.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id=id1 class=wrapper>
+        <div id=id11>#id11. 첫번째 div 형제</div>
+        <p id=id12>#id12. p 형제</p>
+        <p id=id13>#id13. p 형제</p>
+        <div id=id14>#id14. 두번째 div 형제</div>
+        <div id=id15>#id15. 세번째 div 형제</div>
+    </div>
+    <!--
+      1. <p> 다음의 모든 형제 <div>에 color:blue 적용
+      2. #id11 : <p> 앞에 있으므로 매치되지 않음
+    -->
+
+    <script type="text/javascript">
+      var nodes = document.querySelectorAll("p-div");
+      for(k = 0; k < nodes.length; k++) {
+          js.log(nodes[k].textContent);
+      }
+    </script>
+  </body>
+</html>
