@@ -33,7 +33,7 @@
 * 누가
   * 사용자, 브라우저
 * 무엇을
-  * <h1 id = "dom" style="color:blue">DOM</h1>
+  * \<h1 id = "dom" style="color:blue"\>DOM\</h1\>
   * Element, Attribute, Event
 * 어떻게
   * CRUD : Create, Read, Update, Delete
