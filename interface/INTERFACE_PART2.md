@@ -100,14 +100,13 @@
   * IME 전용 이벤트 타입
   * IME(Input Method Editor). Mac은 IM으로 부르기도 함
   * ex) 한글을 한자로 변환
-  * <input>,<textarea>, contentedtable=true에서 사용
 
 * 이벤트 사용 형태
   * "한"을 입력하고 "한자"버튼을 누르면 "한"에 해당하는 한자가 리스트 형태로 표시되며 리스트에서 원하는 한자를 선택
   * 브라우저에 따라 차이가 있음
 
 |이벤트 타입|개요|
-|---------------|-----------------------------|
+|---------------|------------------------|
 |compositionstart|composition session이 시작 될 때|
 |compositionupdate|IME 문자 입력 및 처리 할 때|
 |compositionend|composition session이 종료 될 때|
