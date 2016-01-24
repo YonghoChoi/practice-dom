@@ -2,10 +2,10 @@
 
 ## DocumentFragment
 
-1. 자바스크립트로 <li>를 생성하여 <ul>의 차일드로 첨부하면 첨부할 때마다 렌더링을 하게 되므로 처리 속도가 떨어진다.
+1. 자바스크립트로 \<li\>를 생성하여 \<ul\>의 차일드로 첨부하면 첨부할 때마다 렌더링을 하게 되므로 처리 속도가 떨어진다.
 
 2. DocumentFragment 오브젝트는 작은 Document로 메모리에 존재하며 DOM Tree에 연결되어 있지 않다.
-  * 생성한 <li>를 DocumentFragment에 첨부하면 랜더링 하지 않음.
+  * 생성한 \<li\>를 DocumentFragment에 첨부하면 랜더링 하지 않음.
 
 3. 첨부가 완료된 후 DocumentFragment를 document에 첨부하면 랜더링을 한번만 하게 되므로 처리 속도가 향상된다.
 

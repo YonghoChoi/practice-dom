@@ -13,7 +13,7 @@
 
 * parentElement
   * parentNode와 같음
-  * 단, <html>의 parent를 구할 때는 차이가 있음.
+  * 단, \<html\>의 parent를 구할 때는 차이가 있음.
 
 ## firstChild
 

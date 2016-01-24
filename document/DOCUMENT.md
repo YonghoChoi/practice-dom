@@ -7,15 +7,15 @@
 
 * 엘리먼트(Element)
   * Element Interface를 Object로 생성한 것
-  * <div id=sports>텍스트</div>
-    * <div>는 요소가 아님
-    * <div>는 Element Object의 약칭
+  * \<div id=sports\>텍스트\</div\>
+    * \<div\>는 요소가 아님
+    * \<div\>는 Element Object의 약칭
 
 * 노드(Attribute)
   * 하나의 엘리먼트를 노드 단위로 쪼갤 수가 있다. (구분용)
     * 12개의 노드 타입
-  * <div id=sports>텍스트</div>
-    * 엘리먼트 노드 : <div>
+  * \<div id=sports\>텍스트\</div\>
+    * 엘리먼트 노드 : \<div\>
     * 속성 노드 : id=sports
     * 텍스트 노드 : "텍스트"
 
@@ -29,9 +29,9 @@
 * 브라우징 콘텍스트
   * Document 단위의 웹 페이지
     * documnet.open()
-    * <iframe> : 브라우징 콘텍스트
+    * \<iframe\> : 브라우징 콘텍스트
       * 하나의 탭을 더 연 것과 같다.
-      * 사용을 지양해야 한다. 지금은 <div>로 대체 가능
+      * 사용을 지양해야 한다. 지금은 \<div\>로 대체 가능
 
 * ducument 구성 프로퍼티
 ```
@@ -58,7 +58,7 @@ window.onload = function() {
 
 * Document Type Definition(DTD)
 * HTML5
-  * <!DOCTYPE html>
+  * \<!DOCTYPE html\>
   * 대소문자 구분하지 않음
   * 대문자 사용은 관례
 * 프로퍼티

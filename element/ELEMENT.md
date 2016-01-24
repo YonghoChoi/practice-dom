@@ -11,7 +11,7 @@
 
 * 엘리먼트의 속성 반환
 * nodeName과 tagName 차이
-  * 일반 엘리먼트에는 차이가 없으나 <!DOCTYPE html>를 나타내는 document 엘리먼트에 nodeName은 '#document' 형태로 값이 있지만 tagName은 속성 자체가 없다.
+  * 일반 엘리먼트에는 차이가 없으나 \<!DOCTYPE html\>를 나타내는 document 엘리먼트에 nodeName은 '#document' 형태로 값이 있지만 tagName은 속성 자체가 없다.
   * nodeName 사용 권장
 
 ### NamedNodeMap

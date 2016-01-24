@@ -17,7 +17,7 @@
 ## DOM (Document Object Model)
 
 * Document
-  * <!DOCTYPE html>~</html>
+  * \<!DOCTYPE html\>~\</html\>
   * html 파일 전체
 * Object
   * 객체 개념으로 접근 (Mark up을 텍스트 개념으로 보면 안되고 객체 개념으로 봐야 한다.)
@@ -40,7 +40,7 @@
 * 언제
   * HTML을 랜더링 할 때, CRUD 필요시, 이벤트 발생시
 * 어디에
-  * documnet, <!DOCTYPE html><html>~</html> (전체)
+  * documnet, \<!DOCTYPE html\>\<html\>~\</html\> (전체)
 * 왜
   * 역동적으로 콘텐츠를 제공하기 위해서
 
@@ -127,7 +127,7 @@
 * DOM 워킹 그룹 분리
   * HTML, Web Apps, CSSOM
 * 많은 이벤트 타입 추가
-  * <video>, <audio> 제어 이벤트 타입
+  * \<video\>, \<audio\> 제어 이벤트 타입
   * click을 onclick 형태로 사용
   * 엘리먼트에 이벤트 작성 (이 전에는 비표준이었음)
 * [CSSOM] 분리
@@ -148,7 +148,7 @@
 * 마크업
   * 추가
     * 콘텐츠 모델
-    * <video>, <section> 등
+    * \<video\>, \<section\> 등
   * 재정의
 
 * API

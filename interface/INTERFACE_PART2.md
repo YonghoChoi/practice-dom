@@ -26,11 +26,11 @@
   * afterend : 기준 엘리먼트의 직후 형제 노드로 삽입
   * beforeend : 기준 엘리먼트의 마지막 차일드로 삽입
 
-형제노드 : <div></div>
+형제노드 : \<div\>\</div\>
         (beforebegin)
-기준노드 : <div>(afterbegin)Text(afterend)</div>
+기준노드 : \<div\>(afterbegin)Text(afterend)\</div\>
         (beforeend)
-형제노드 : <div></div>
+형제노드 : \<div\>\</div\>
 
 #### insertBefore()
 
