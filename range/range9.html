@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button type=button id=insert>surroundContents()</button>
+    <button type=button id=extract>extractContents()</button>
+    <div id=id01>처음<span id=id02>중간</span>끝</div>
+
+    <script type="text/javascript">
+      var rangeObj = new Range();
+      var id02Node = get("id02");
+      rangeObj.selectNode(id02Node);
+
+      get("insert").onclick = function(event) {
+        var newNode = document.createElement("strong");
+        // 텍스트는 무시된다.
+        newNode.textContent = "추가한 것";
+        // <strong>#id2</strong> 형태가 된다.
+        rangeObj.surroundContents(newNode);
+        var fragmentObj = rangeObj.cloneContents();
+        js.log("surround 후 : ", fragmentObj.textContent);
+      }
+      get("extract").onclick = function(event) {
+        var extract = rangeObj.extractContents();
+        js.log("extract 후 : ", extract.textContent);
+      }
+    </script>
+  </body>
+</html>

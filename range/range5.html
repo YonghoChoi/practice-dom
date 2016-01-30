@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <button id=insert type=button>insertNode 실행</button>
+    <div id=id01>처음<i id=id02>중간</i>끝</div>
+
+    <script type="text/javascript">
+      debugger;
+      var rangeObj = new Range();
+      rangeObj.setStart(get("id01").firstChild, 0);
+      rangeObj.setEnd(get("id02").firstChild, 2);
+
+      var fragmentObj = rangeObj.cloneContents();
+      js.log("insert 전 : ", fragmentObj.textContent);
+
+      var node = document.createElement("strong");
+      node.textContent = "추가한 노드";
+      js.log("노드 존재 : ", rangeObj.intersectsNode(node));
+
+      get("insert").onclick = function(event) {
+          debugger;
+          rangeObj.insertNode(node);
+          fragmentObj = rangeObj.cloneContents();
+          js.log("insert 후 : ", fragmentObj.textContent);
+          js.log("노드 존재 : ", rangeObj.intersectsNode(node));
+      }
+    </script>
+  </body>
+</html>

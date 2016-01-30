@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p><button type=button id=clickID>문자열 삭제 실행</button></p>
+    <div id=beginID>가나다라<strong id=strongID>마바사아자차</strong></div>
+
+    <script type="text/javascript">
+      // range 오브젝트 생성
+      //var rangeObj = document.createRange();
+      var rangeObj = new Range();
+      var beginNode = get("beginID");
+      var strongNode = get("strongID");
+
+      rangeObj.setStart(beginNode.firstChild, 2);
+      rangeObj.setEnd(strongNode.firstChild, 3);
+
+      // range로 지정된 범위의 콘텐츠를 복사
+      var fragmentObj = rangeObj.cloneContents();
+      js.log(fragmentObj.textContent);
+    </script>
+
+<!--
+    <script type="text/javascript">
+      get("clickID").onclick = function(event) {
+        var rangeObj = new Range();
+        var beginNode = get("beginID");
+        var strongNode = get("strongID");
+
+        rangeObj.setStart(beginNode.firstChild, 2);
+        rangeObj.setEnd(strongNode.firstChild, 3);
+
+        rangeObj.remove();
+        js.log(get("beginID").textContent);
+      }
+    </script>
+  -->
+  </body>
+</html>

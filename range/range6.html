@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id=id01>처음<strong id=id02>중간</strong>끝</div>
+
+    <script type="text/javascript">
+      var rangeObj = new Range();
+      rangeObj.setStart(get("id01").firstChild, 0);
+      rangeObj.setEnd(get("id02").firstChild, 2);
+
+      var cloneObj = rangeObj.cloneRange();
+      var fragmentObj = cloneObj.cloneContents();
+      js.log("복제 후 : ", fragmentObj.textContent);
+
+      js.log("collapse() 전 : ", rangeObj.cloneContents().textContent);
+      rangeObj.collapse(false);
+      js.log("collapse() 후 : ", rangeObj.cloneContents().textContent);
+    </script>
+  </body>
+</html>

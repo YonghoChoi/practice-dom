@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p>
+      <button id=deleteContents type=button>콘텐츠만 삭제</button>
+      <button id=deleteAll type=button>엘리먼트 포함 삭제</button>
+    </p>
+
+    <ul id=ul00 style="background:lime; width: 150px; height: 110px;">ulNode
+      <li id=id01>가나다라마</li>
+      <li id=id02>바사아자차</li>
+      <li id=id03>카타파하</li>
+    </ul>
+
+    <script type="text/javascript">
+      var rangeObj = new Range();
+      var ul00Node = get("ul00");
+
+      get("deleteContents").onclick = function(event) {
+        deleteContents("remain");
+      }
+
+      get("deleteAll").onclick = function(event) {
+        deleteContents("all");
+      }
+
+      function deleteContents(range) {
+        if(range === "remain") {
+          rangeObj.selectNodeContentes(ul00Node);
+        } else {
+          rangeObj.selectNode(ul00Node);
+        }
+        rangeObj.deleteContents();
+      }
+    </script>
+  </body>
+</html>

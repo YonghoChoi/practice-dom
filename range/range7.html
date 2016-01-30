@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../common/log.js" charset="utf-8"></script>
+    <script src="../common/myNote.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <ul id=ULID>ulNode
+      <li id=id01>가나다라마</li>
+      <li id=id02>바사아자차</li>
+      <li id=id03>카타파하</li>
+    </ul>
+
+    <script type="text/javascript">
+    /*
+      START_TO_START : 0, 시작 점끼리 비교
+      START_TO_END : 1, 개시점과 종료점을 비교
+      END_TO_END : 2, 종료점끼리 비교
+      END_TO_START : 3, 종료점과 개시점을 비교
+    */
+      var rangeObj = new Range();
+      var sourceObj = new Range();
+      var id01Node = get("id01");
+      var id02Node = get("id02");
+      rangeObj.selectNode(id01Node);
+      sourceObj.selectNode(id02Node);
+
+      // START_TO_START는 시작 점끼리 비교
+      // rangeObj의 #id01이 sourceObj의 #id02보다 앞에 있으므로 -1 반환
+      js.log(rangeObj.compareBoundaryPoints(Range.START_TO_START, sourceObj));
+
+      // 비교를 바꾸어서 비교하면
+      // sourceObj의 #id02가 rangeObj의  #id01보다 뒤에 있으므로 1을 반환
+      js.log(sourceObj.compareBoundaryPoints(Range.START_TO_START, rangeObj));
+
+      // #id02가 rangeObj의 #id01보다 뒤에 있으므로 1을 반환
+      js.log(rangeObj.comparePoint(id02Node, 1));
+    </script>
+  </body>
+</html>
